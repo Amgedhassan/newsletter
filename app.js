@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3001;
 const path = require("path");
 const https = require("https");
 const bodyParser = require("body-parser");
@@ -20,24 +20,6 @@ app.use(bodyParser.urlencoded({
 app.use(express.static(path.join(__dirname, 'public')));
 ///////////////////////////////////////////////////////////////////
 const listId = "8430546adf";
-//const subscribingUser = {
-//    firstName: "Jone",
-//    lastName: "Doe",
-//    email: "archamgedh@gmail.com"
-//}
-//
-//const run = async ()=>{
-//    const respones = await mailchimp.lists.addListMember(listId,{
-//        email_address: subscribingUser.email,
-//        status: "subscribed",
-//        merge_fields: {
-//            FNAME: subscribingUser.firstName,
-//            LNAME: subscribingUser.lastName
-//        }
-//    });
-//    console.log(`success adding user, useID: ${respones.id}`);
-//}
-//run();
 ///////////////////////////////////////////////////////////////////
 
 app.get("/", (req, res) => {
