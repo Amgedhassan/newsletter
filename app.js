@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+require('dotenv').config()
 const port = process.env.PORT || 3001;
 const path = require("path");
 const https = require("https");
@@ -8,7 +9,7 @@ const mailchimp = require("@mailchimp/mailchimp_marketing");
 
 ///////////////////////////////////////////////////////////////////
 mailchimp.setConfig({
-    apiKey: "0f02b8151bb7cbe4102029aecd6e9c17-us11",
+    apiKey: process.env.SECRET_KEY,
     server: "us11",
 });
 
